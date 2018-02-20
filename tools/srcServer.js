@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import path from 'path';
 import config from '../webpack.config.dev';
 import open from 'open';
+import PythonShell from 'python-shell';
 
 /* eslint-disable no-console */
 
@@ -17,6 +18,19 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
+app.get("/pythonRes", function(req,res){
+  PythonShell.run("./samplePython.py", function (err, data) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    }
+    else{
+      console.log(JSON.stringify(data));
+      res.send(JSON.stringify(data))
+    }
+  });
+});
+
 app.get('*', function(req, res) {
   res.sendFile(path.join( __dirname, '../src/index.html'));
 });
@@ -28,3 +42,33 @@ app.listen(port, function(err) {
     open(`http://localhost:${port}`);
   }
 });
+
+//database 
+// let connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'sampleDB'
+// });
+
+// connection.connect(function(error){
+//   if(error){
+//       console.log("error");
+//   } else{
+//       console.log("working");
+//   }
+// });
+// app.get("/api/users", function(request, response){
+//   connection.query("SELECT * from login", function(error,rows, field){
+//       if(error){
+//            console.log("error connecting database");
+//       } else{
+//           console.log("Query is working");
+//           response.send(JSON.stringify(rows));
+//           // fetch('https://api.github.com/users/github')
+//           //     .then(res => res.json())
+//           //     .then(json => console.log(json));
+//       }
+//   });
+// });
+

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { Parallax } from 'react-parallax';
 import { Link, IndexLink } from 'react-router';
 import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+// import pic from '../../../src/images/Home (1).jpg';
 
 
 const styles = {
@@ -20,7 +21,7 @@ const image3 = "https://i.ytimg.com/vi/fvEBY1Zf70Y/maxresdefault.jpg";
 const App = () => (
     <div style={styles} id="top">
         <Parallax bgImage={image1}
-            strength={500}>
+            strength={300}>
             <div style={{ height: 700 }}><a href="#prolytics">
                 <div style={insideStyles} >
                     <span style={{ color: 'white' }}>SROLL DOWN</span>
@@ -52,6 +53,7 @@ const App = () => (
         </div>
         <h2>{'\u2728'}</h2>
     </div>
+
 );
 
 export default App;
