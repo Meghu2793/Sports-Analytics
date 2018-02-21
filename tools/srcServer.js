@@ -4,6 +4,7 @@ import path from 'path';
 import config from '../webpack.config.dev';
 import open from 'open';
 import PythonShell from 'python-shell';
+var jsonic = require('jsonic')
 
 /* eslint-disable no-console */
 
@@ -25,9 +26,8 @@ app.get("/pythonRes", function(req,res){
       res.send(err);
     }
     else{
-      console.log(JSON.stringify(data));
-      res.send(JSON.stringify(data))
-    }
+      res.send(jsonic(data[0]));
+  }
   });
 });
 
