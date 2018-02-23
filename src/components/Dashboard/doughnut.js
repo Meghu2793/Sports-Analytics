@@ -5,17 +5,15 @@ const data = {
 	labels: [
 		'NBA',
 		'MLB',
-		'NFL',
-		'NHL',
-		'PGA'
+		'NFL'
 	],
 	datasets: [{
-		data: [300, 50, 100,70,110],
+		data: [300, 50, 100],
 		backgroundColor: [
-			'#3366CC', '#DC3912', '#FF9900', '#109618', '#990099'
+			'#488A99', '#1F3F49', '#73909A'
 		],
 		hoverBackgroundColor: [
-			'#3366CC', '#DC3912', '#FF9900', '#109618', '#990099'
+			'#488A99', '#1F3F49', '#73909A'
 		]
 	}]
 };
