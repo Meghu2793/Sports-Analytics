@@ -93,7 +93,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="animated zoomInDown">
         <div className="col-sm-6">
           <RadarExample />
         </div>

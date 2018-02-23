@@ -1,36 +1,39 @@
-import React from "react";
-import { Radar } from "react-chartjs-2";
+import React from 'react';
+import {Radar} from 'react-chartjs-2';
+import '../../styles/styles.css';
 
 const data = {
-  labels: [
-    "Eating",
-    "Drinking",
-    "Sleeping",
-    "Designing",
-    "Coding",
-    "Cycling",
-    "Running"
-  ],
+  labels: ['NBA', 'MLB', 'NFL', 'NHL', 'PGA'],
   datasets: [
     {
-      label: "My First dataset",
-      backgroundColor: "rgba(179,181,198,0.2)",
-      borderColor: "rgba(179,181,198,1)",
-      pointBackgroundColor: "rgba(179,181,198,1)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgba(179,181,198,1)",
-      data: [65, 59, 90, 81, 56, 55, 40]
+      label: 'My First dataset',
+      backgroundColor: '#488A99',
+      borderColor: '#488A99',
+      pointBackgroundColor: '#488A99',
+      pointBorderColor: '#488A99',
+      pointHoverBackgroundColor: '#488A99',
+      pointHoverBorderColor: '#488A99',
+      data: [310, 420, 530, 640, 756]
     },
     {
-      label: "My Second dataset",
-      backgroundColor: "rgba(255,99,132,0.2)",
-      borderColor: "rgba(255,99,132,1)",
-      pointBackgroundColor: "rgba(255,99,132,1)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgba(255,99,132,1)",
-      data: [28, 48, 40, 19, 96, 27, 100]
+      label: 'My Second dataset',
+      backgroundColor: '#1F3F49',
+      borderColor: '#1F3F49',
+      pointBackgroundColor: '#1F3F49',
+      pointBorderColor: '#1F3F49',
+      pointHoverBackgroundColor: '#1F3F49',
+      pointHoverBorderColor: '#1F3F49',
+      data: [560, 670, 780, 819, 996]
+    },
+    {
+      label: 'My Third dataset',
+      backgroundColor: '#73909A',
+      borderColor: '#73909A',
+      pointBackgroundColor: '#73909A',
+      pointBorderColor: '#73909A',
+      pointHoverBackgroundColor: '#73909A',
+      pointHoverBorderColor: '#73909A',
+      data: [128, 1148, 40, 119, 196]
     }
   ]
 };

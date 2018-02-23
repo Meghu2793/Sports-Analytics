@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import '../../styles/styles.css';
 
 const Header = () => {
     return (
@@ -10,13 +11,13 @@ const Header = () => {
        
         </Nav> */}
                 <Navbar.Brand>
-                    <a href="#brand" style={{ fontSize: "30px", color: "#4d4d4d" }}>ProLytics</a>
+                    <a href="#brand" style={{ fontSize: "30px", color: "#4d4d4d", textShadow: "3px 3px" }} className="animated  flip"> ProLytics</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
-                <Nav pullRight>
-                    <IndexLink to="/" activeClassName="active" >Home</IndexLink>
+                <Nav pullRight className="animated flip" id="top">
+                    <IndexLink to="/" activeClassName="active">Home</IndexLink>
                     {"  |  "}
                     <IndexLink to="/professional" activeClassName="active">Professional</IndexLink>
                     {"  |  "}
