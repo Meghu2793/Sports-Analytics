@@ -124,9 +124,9 @@ export default class App extends React.Component {
           <table className="table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <th>Name </th>
-                <th>Address </th>
-                <th>Age</th>
+                <th>Player Name  &nbsp; </th>
+                <th>FG2_PCT &nbsp; </th>
+                <th>FG3_PCT &nbsp;</th>
               </tr>
             </thead>
             <tbody>
