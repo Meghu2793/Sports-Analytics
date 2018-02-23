@@ -1,21 +1,37 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Parallax } from 'react-parallax';
-import { Link, IndexLink } from 'react-router';
-import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import React from "react";
+import { render } from "react-dom";
+import { Parallax } from "react-parallax";
+import { Link, IndexLink } from "react-router";
+import {
+  Button,
+  Navbar,
+  Nav,
+  NavItem,
+  NavDropdown,
+  MenuItem
+} from "react-bootstrap";
 // import pic from '../../../src/images/Home (1).jpg';
 import '../../styles/styles.css';
 
-
 const styles = {
-    fontFamily: 'sans-serif',
-    textAlign: 'center',
-    height: '100%'
-
+  fontFamily: "sans-serif",
+  textAlign: "center",
+  height: "100%"
 };
-const insideStyles = { background: 'grey', padding: 10, position: 'absolute', font: 400, width: '15%', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' };
-const image1 = "https://designmodo.com/wp-content/uploads/2013/08/MIO-Global.jpg";
-const image2 = "https://designmodo.com/wp-content/uploads/2013/08/MIO-Global.jpg";
+const insideStyles = {
+  background: "grey",
+  padding: 10,
+  position: "absolute",
+  font: 400,
+  width: "15%",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%,-50%)"
+};
+const image1 =
+  "https://designmodo.com/wp-content/uploads/2013/08/MIO-Global.jpg";
+const image2 =
+  "https://designmodo.com/wp-content/uploads/2013/08/MIO-Global.jpg";
 const image3 = "https://i.ytimg.com/vi/fvEBY1Zf70Y/maxresdefault.jpg";
 
 //

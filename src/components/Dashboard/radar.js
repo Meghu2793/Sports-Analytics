@@ -39,7 +39,7 @@ const data = {
 };
 
 export default React.createClass({
-  displayName: 'RadarExample',
+  displayName: "RadarExample",
 
   render() {
     return (
