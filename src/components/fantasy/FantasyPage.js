@@ -3,8 +3,14 @@ import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-boots
 import {Link, IndexLink} from 'react-router';
 
 var divStyle = {
-    height: "200px"
-  };
+    height: "200px",
+    border: "1px solid #eee",
+    padding: "15px"
+};
+var divBorderLeft = {
+    border: "1px solid #eee"
+    // borderRightWidth: "30px solid #eee"
+};
 
 class FantasyProLytics extends React.Component{
     render(){
@@ -14,16 +20,16 @@ class FantasyProLytics extends React.Component{
                     <p>This is Banner Section </p>
                 </div>
                 <div className="col-md-12" style={divStyle}>
-                    <div className="col-md-3">
+                    <div className="col-md-3" style={divBorderLeft}>
                         <p>Twitter Live Feed</p>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3" style={divBorderLeft}>
                         <p>Breaking News</p>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3" style={divBorderLeft}>
                         <p>Todays Games</p>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3" style={divBorderLeft}>
                         <p>DFS Player Leaderboards</p>
                     </div>
                 </div>
