@@ -12,21 +12,9 @@ import ScatterExample from "./scatter";
 import MixedDataExample from "./mix";
 import LegendOptionsExample from "./legend-options";
 import LegendHandlersExample from "./legend-handlers";
-import react_bootstrap from "react-bootstrap";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
-// import '../css/Table.css';
-// import '../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css'
 
-export default class App extends React.Component {
-  // var products = [{
-  // 	id: 1,
-  // 	name: "Item name 1",
-  // 	price: 100
-  //   },{
-  // 	id: 2,
-  // 	name: "Item name 2",
-  // 	price: 100
-  //   },........];
+export default class Dashboard extends React.Component {
 
   constructor() {
     super();
@@ -34,6 +22,65 @@ export default class App extends React.Component {
       pictures: {}
     };
   }
+  componentDidMount() {
+    fetch("http://localhost:8080/NBA/get_player_shot_tracking_overall")
+      .then(results => results.json())
+      .then(data => {
+        this.setState({ pictures: data });
+      });
+  }
+
+  renderPicture() {
+    // console.log("Inside Render Picture", Object.keys(this.state.pictures));
+    return this.state.pictures.map(pic => {
+      const val = Object.values(pic);
+      return val.map(obj => {
+        return (
+          <tr>
+            <td>{obj.PLAYER_NAME_LAST_FIRST}</td>
+            <td>{obj.FG2_PCT}</td>
+            <td>{obj.FG3_PCT}</td>
+          </tr>
+        );
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div className="animated zoomInDown">
+        <div className="col-sm-6">
+          <RadarExample />
+        </div>
+        <div className="col-sm-6">
+          <Doughnut />
+        </div>
+        <div className="col-sm-6">
+          <DynamicDoughnutExample />
+        </div>
+        <div className="col-sm-6">
+          <PieExample />
+        </div>
+        <div className="col-md-4" />
+        <div className="col-md-6">
+          <table className="table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Player Name  &nbsp; </th>
+                <th>FG2_PCT &nbsp; </th>
+                <th>FG3_PCT &nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.pictures.length > 0 && this.renderPicture()}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+}
+
 
   // //COde to fetch the data from API using Axious.js / fetch call
   // componentDidMount(){
@@ -64,49 +111,9 @@ export default class App extends React.Component {
   // 	});
   // }
 
-  componentDidMount() {
-    fetch("http://localhost:3000/pythonRes")
-      .then(results => results.json())
-      .then(data => {
-        this.setState({ pictures: data });
-        // console.log("state", this.state.pictures);
-      });
-  }
+  //Bootstrap Table
 
-  renderPicture() {
-    console.log("Inside Render Picture", Object.keys(this.state.pictures));
-    return this.state.pictures.map(pic => {
-      const val = Object.values(pic);
-      return val.map(obj => {
-        return (
-          <tr>
-            <td>{obj.PLAYER_NAME_LAST_FIRST}</td>
-            <td>{obj.FG2_PCT}</td>
-            <td>{obj.FG3_PCT}</td>
-          </tr>
-        );
-        // console.log(obj.PLAYER_NAME_LAST_FIRST);
-      });
-      // console.log("Values",Object.values(pic))
-    });
-  }
-
-  render() {
-    return (
-      <div className="animated zoomInDown">
-        <div className="col-sm-6">
-          <RadarExample />
-        </div>
-        <div className="col-sm-6">
-          <Doughnut />
-        </div>
-        <div className="col-sm-6">
-          <DynamicDoughnutExample />
-        </div>
-        <div className="col-sm-6">
-          <PieExample />
-        </div>
-        {/* <div>
+   {/* <div>
 				<BootstrapTable data={this.props.fgValues}>
 					<TableHeaderColumn isKey dataField='id'>
 						Name
@@ -119,22 +126,3 @@ export default class App extends React.Component {
 					</TableHeaderColumn>
 				</BootstrapTable>
 	  </div> */}
-        <div className="col-md-4" />
-        <div className="col-md-6">
-          <table className="table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                <th>Player Name  &nbsp; </th>
-                <th>FG2_PCT &nbsp; </th>
-                <th>FG3_PCT &nbsp;</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.pictures.length > 0 && this.renderPicture()}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    );
-  }
-}

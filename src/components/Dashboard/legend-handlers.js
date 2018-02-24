@@ -24,7 +24,7 @@ const data = {
 
 const legendOpts = {
   onClick: (e, item) => alert(`Item with text ${item.text} and index ${item.index} clicked`),
-  onHover: (e, item) => alert(`Item with text ${item.text} and index ${item.index} hovered`),
+  onHover: (e, item) => alert(`Item with text ${item.text} and index ${item.index} hovered`)
 };
 
 export default React.createClass({

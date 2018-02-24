@@ -19,8 +19,8 @@ class ProfessionalPage extends React.Component{
                 <Link to="/pga" activeClassName="active">PGA</Link>
             </Nav>
             </Navbar>
-             <div>
-                 <h1>Professional</h1>
+             <div className="container fluid">
+                 <h3>Professional</h3>
                  <p>This is a Professional Page.</p>
              </div>
              </div>

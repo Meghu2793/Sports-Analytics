@@ -8,7 +8,7 @@ var jsonic = require("jsonic");
 
 /* eslint-disable no-console */
 
-const port = 3000;
+const port = 8080;
 const app = express();
 const compiler = webpack(config);
 
@@ -21,7 +21,7 @@ app.use(
 
 app.use(require("webpack-hot-middleware")(compiler));
 
-app.get("/pythonRes", function(req, res) {
+app.get("/NBA/get_player_shot_tracking_overall", function(req, res) {
   PythonShell.run("./samplePython.py", function(err, data) {
     if (err) {
       console.log(err);

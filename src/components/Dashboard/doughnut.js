@@ -1,6 +1,8 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
 
+
+
 const data = {
 	labels: [
 		'NBA',
@@ -19,7 +21,9 @@ const data = {
 };
 
 export default React.createClass({
-  displayName: 'DoughnutExample',
+	displayName: 'DoughnutExample',
+	
+	
 
   render() {
     return (

@@ -31,7 +31,7 @@ class CoursePage extends React.Component{
     render(){
         return(
             <div>
-                <h1>Login Here!</h1>
+                <h3 className="container fluid">Login Here!</h3>
                 <div className="Login">
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
