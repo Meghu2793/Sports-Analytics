@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import '../../styles/styles.css';
-import logo from '../../images/logo.png';
 
 const Header = () => {
     return (
