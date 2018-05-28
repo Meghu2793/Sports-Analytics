@@ -14,8 +14,22 @@ import LegendOptionsExample from "./legend-options";
 import LegendHandlersExample from "./legend-handlers";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 
-export default class Dashboard extends React.Component {
+var style10 = {
+  padding : "10px"
+};
+var style11 = {
+  overflow : "scroll",
+  height: "550px"
+};
+var style12 = {
+width : "500px",
+marginTop : "25px"
+};
+var style14 = {
+  marginTop: "30px"
+}
 
+export default class Dashboard extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -23,7 +37,7 @@ export default class Dashboard extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("http://localhost:8080/NBA/get_player_shot_tracking_overall")
+    fetch("http://localhost:3000/NBA/get_player_shot_tracking_overall")
       .then(results => results.json())
       .then(data => {
         this.setState({ pictures: data });
@@ -31,15 +45,14 @@ export default class Dashboard extends React.Component {
   }
 
   renderPicture() {
-    // console.log("Inside Render Picture", Object.keys(this.state.pictures));
     return this.state.pictures.map(pic => {
       const val = Object.values(pic);
       return val.map(obj => {
         return (
           <tr>
-            <td>{obj.PLAYER_NAME_LAST_FIRST}</td>
-            <td>{obj.FG2_PCT}</td>
-            <td>{obj.FG3_PCT}</td>
+            <td style={style10}>{obj.PLAYER_NAME_LAST_FIRST}</td>
+            <td style={style10}>{obj.FG2_PCT}</td>
+            <td style={style10}>{obj.FG3_PCT}</td>
           </tr>
         );
       });
@@ -49,26 +62,18 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <div className="animated zoomInDown">
-        <div className="col-sm-6">
-          <RadarExample />
+      <div class = "col-md-12 row"> 
+        <div className="col-md-6" style={style14}>
+        <RadarExample />
         </div>
-        <div className="col-sm-6">
-          <Doughnut />
-        </div>
-        <div className="col-sm-6">
-          <DynamicDoughnutExample />
-        </div>
-        <div className="col-sm-6">
-          <PieExample />
-        </div>
-        <div className="col-md-4" />
-        <div className="col-md-6">
-          <table className="table-striped table-bordered table-hover">
+        {/* <div className="col-md-4" /> */}
+        <div className="col-md-6" style= {style11}>
+          <table className="table-striped table-bordered table-hover" style={style12} >
             <thead>
               <tr>
-                <th>Player Name  &nbsp; </th>
-                <th>FG2_PCT &nbsp; </th>
-                <th>FG3_PCT &nbsp;</th>
+                <th style={style10}>Player Name &nbsp; </th>
+                <th style={style10}>FG2_PCT &nbsp; </th>
+                <th style={style10}>FG3_PCT &nbsp;</th>
               </tr>
             </thead>
             <tbody>
@@ -76,44 +81,45 @@ export default class Dashboard extends React.Component {
             </tbody>
           </table>
         </div>
+        </div>
       </div>
     );
   }
 }
 
+// //COde to fetch the data from API using Axious.js / fetch call
+// componentDidMount(){
+//     fetch('http://localhost:3000/pythonRes')
+//     .then(results => results.json()
+//     ).then(data =>  {
+// 		var res = data;
+// 		res.map(pic => {
+// 			const values_ = Object.values(pic)
+// 			values_.map(obj =>{
+// 			console.log(obj);
+// 		})
+// 	})
+// 		this.setState({pictures: data});
+// 		// console.log("state", this.state.pictures);
+// 	});
+// }
 
-  // //COde to fetch the data from API using Axious.js / fetch call
-  // componentDidMount(){
-  //     fetch('http://localhost:3000/pythonRes')
-  //     .then(results => results.json()
-  //     ).then(data =>  {
-  // 		var res = data;
-  // 		res.map(pic => {
-  // 			const values_ = Object.values(pic)
-  // 			values_.map(obj =>{
-  // 			console.log(obj);
-  // 		})
-  // 	})
-  // 		this.setState({pictures: data});
-  // 		// console.log("state", this.state.pictures);
-  // 	});
-  // }
+// renderPicture () {
+// 	console.log("Inside Render Picture", Object.keys(this.state.pictures));
+// 	this.state.pictures.map((pic) => {
+// 		const val = Object.values(pic);
+// 		val.map(obj =>{
+// 			console.log(obj);
+// 			fgValues.push(obj);
+// 		})
+// 		// console.log("Values",Object.values(pic))
+// 	});
+// }
 
-  // renderPicture () {
-  // 	console.log("Inside Render Picture", Object.keys(this.state.pictures));
-  // 	this.state.pictures.map((pic) => {
-  // 		const val = Object.values(pic);
-  // 		val.map(obj =>{
-  // 			console.log(obj);
-  // 			fgValues.push(obj);
-  // 		})
-  // 		// console.log("Values",Object.values(pic))
-  // 	});
-  // }
+//Bootstrap Table
 
-  //Bootstrap Table
-
-   {/* <div>
+{
+  /* <div>
 				<BootstrapTable data={this.props.fgValues}>
 					<TableHeaderColumn isKey dataField='id'>
 						Name
@@ -125,4 +131,5 @@ export default class Dashboard extends React.Component {
 						FG2_PC2
 					</TableHeaderColumn>
 				</BootstrapTable>
-	  </div> */}
+	  </div> */
+}

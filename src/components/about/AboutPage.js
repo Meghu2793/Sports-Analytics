@@ -46,16 +46,6 @@ class AboutPage extends React.Component{
             />
             </FormGroup>
 
-            <FormGroup controlId="dob" bsSize="large">
-            <ControlLabel>Date Of Birth</ControlLabel>
-            <FormControl
-              
-              type="DateOfBirth"
-              value={this.state.dob}
-              onChange={this.handleChange}
-            />
-            </FormGroup>
-
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
@@ -65,8 +55,27 @@ class AboutPage extends React.Component{
             />
         </FormGroup>
 
+        <FormGroup controlId="dob" bsSize="large">
+            <ControlLabel>Phone Number (Optional)</ControlLabel>
+            <FormControl
+              
+              type="Phone Number"
+              value={this.state.dob}
+              onChange={this.handleChange}
+            />
+            </FormGroup>
+
           <FormGroup controlId="password" bsSize="large">
             <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Confirm Password</ControlLabel>
             <FormControl
               value={this.state.password}
               onChange={this.handleChange}

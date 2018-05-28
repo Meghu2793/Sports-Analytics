@@ -1,39 +1,37 @@
-import React from 'react';
-import {Doughnut} from 'react-chartjs-2';
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
 
-function getRandomInt (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 const getState = () => ({
-  labels: [
-    'NBA',
-		'MLB',
-		'NFL'
-  ],
-  datasets: [{
-    data: [getRandomInt(50, 200), getRandomInt(100, 150), getRandomInt(150, 250)],
-    backgroundColor: [
-      '#488A99', '#1F3F49', '#73909A'
-    ],
-    hoverBackgroundColor: [
-      '#488A99', '#1F3F49', '#73909A'
-    ]
-  }]
+  labels: ["NBA", "MLB", "NFL"],
+  datasets: [
+    {
+      data: [
+        getRandomInt(50, 200),
+        getRandomInt(100, 150),
+        getRandomInt(150, 250)
+      ],
+      backgroundColor: ["#488A99", "#1F3F49", "#73909A"],
+      hoverBackgroundColor: ["#488A99", "#1F3F49", "#73909A"]
+    }
+  ]
 });
 
 export default React.createClass({
-  displayName: 'DynamicDoughnutExample',
+  displayName: "DynamicDoughnutExample",
 
-	getInitialState() {
-		return getState();
-	},
+  getInitialState() {
+    return getState();
+  },
 
-	componentWillMount() {
-		setInterval(() => {
-			this.setState(getState());
-		}, 5000);
-	},
+  componentWillMount() {
+    setInterval(() => {
+      this.setState(getState());
+    }, 5000);
+  },
 
   render() {
     return (

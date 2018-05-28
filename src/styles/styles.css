@@ -1,8 +1,12 @@
 /* Styles */
-
+.LogoStyle{
+  display: inline-block;
+  position: relative;
+}
 #app {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #4d4d4d;
+    background-color: #d5d5d5;
     /* min-width: 550px;
     max-width: 850px;
     margin: 0 auto; */
@@ -16,7 +20,17 @@ a.active {
     color: orange;
     
 }
-
+.navbar-default{
+  background: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.navbar-collapse.collapse ul{
+  font-size: 20px;
+}
+.navbar-collapse.collapse ul a{
+  color: #000000;
+}
+/* .navbar-collapse.collapse ul{ */
 nav {
     padding-top: 20px;
 }
